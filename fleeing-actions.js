@@ -4,10 +4,17 @@ const scoreEl = document.getElementById("score");
 
 let score = 0;
 
-document.addEventListener("mousemove", (e) => {
+function updateEscape(e) {
+    let x, y;
 
-    const x = e.clientX;
-    const y = e.clientY;
+    // detectar mouse o touch
+    if (e.type === "touchmove" || e.type === "touchstart") {
+        x = e.touches[0].clientX;
+        y = e.touches[0].clientY;
+    } else {
+        x = e.clientX;
+        y = e.clientY;
+    }
 
     const rectBtn = btn.getBoundingClientRect();
     const rectBox = box.getBoundingClientRect();
@@ -15,24 +22,26 @@ document.addEventListener("mousemove", (e) => {
     const distX = Math.abs(x - (rectBtn.left + rectBtn.width / 2));
     const distY = Math.abs(y - (rectBtn.top + rectBtn.height / 2));
 
-    const distance = 120;
+    const distance = 140; // distancia mayor para móvil
 
     if (distX < distance && distY < distance) {
-
         let newX = Math.random() * (rectBox.width - rectBtn.width);
         let newY = Math.random() * (rectBox.height - rectBtn.height);
 
         btn.style.left = newX + "px";
         btn.style.top = newY + "px";
     }
-});
+}
 
-// Cuando el usuario logra hacer click en el botón
+// Mouse + Touch
+document.addEventListener("mousemove", updateEscape);
+document.addEventListener("touchmove", updateEscape);
+document.addEventListener("touchstart", updateEscape);
+
 btn.addEventListener("click", () => {
     score++;
     scoreEl.textContent = score;
 
-    // El botón se mueve inmediatamente después de atraparlo
     const rectBtn = btn.getBoundingClientRect();
     const rectBox = box.getBoundingClientRect();
 
