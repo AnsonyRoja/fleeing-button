@@ -7,7 +7,7 @@ Un mini–juego divertido creado con HTML, CSS y JavaScript, donde el usuario in
 (Opcional: puedes agregar un GIF o un enlace a GitHub Pages cuando lo publiques)
 Ejemplo:
 
-https://tuusuario.github.io/fleeing-button/
+https://ansonyroja.github.io/fleeing-button/
 
 ✨ Características
 
