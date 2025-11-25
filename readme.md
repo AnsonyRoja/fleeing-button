@@ -48,7 +48,7 @@ fleeing-button/
 
 Descarga o clona el repositorio:
 
-git clone https://github.com/TU_USUARIO/fleeing-button.git
+git clone https://github.com/ansonyroja/fleeing-button.git
 
 
 Abre index.html en tu navegador.
